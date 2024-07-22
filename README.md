@@ -88,14 +88,22 @@ node server.js
 Open your browser and navigate to ```http://localhost:3000``` to view the application.
 
 ## Screenshots
-
+### Home Page
 ![Book-notes Home web page.](readme-image/home.png "This is a Book-Note's Home web-page image.")
+
+### Adding new Book 
 
 ![Book-notes Add new Book web page.](readme-image/Add-new-book.png "This is a Book-Note's Adding book web-page image.")
 
+### Updating Book Notes
+
 ![Book-notes update web page.](readme-image/update.png "This is a Book-Note's updating book web-page image.")
 
+### Search Results
+
 ![Book-notes search-result web page.](readme-image/search-result.png "This is a Book-Note's search-result web-page image.")
+
+### Deleting Book
 
 ![Book-notes Delete-result web page.](readme-image/Delete-function.png "This is a Book-Note's search-result web-page image.")
 
