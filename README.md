@@ -97,6 +97,8 @@ Open your browser and navigate to ```http://localhost:3000``` to view the applic
 
 ![Book-notes search-result web page.](readme-image/search-result.png "This is a Book-Note's search-result web-page image.")
 
+![Book-notes Delete-result web page.](readme-image/Delete-function.png "This is a Book-Note's search-result web-page image.")
+
 ## License 
 
 This project is licensed under the MIT License - see the [MIT](https://choosealicense.com/licenses/mit/) License file for details.
