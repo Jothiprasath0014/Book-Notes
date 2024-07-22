@@ -54,7 +54,7 @@ npm install
 
 ### Technologies Used
 
-* **Frontend:** EJS, CSS
+* **Frontend:** EJS, CSS, Bootstrap
 * **Backend:** Node.js, Express.js
 * **Database:** PostgreSQL
 * **NPM Libraries:** body-parser, express, pg, ejs, axios, method-override
