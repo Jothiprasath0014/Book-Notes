@@ -19,8 +19,8 @@ app.use(methodOverride('_method')); // the method-override middleware allows ove
 const db = new pg.Client({
     user: "postgres",
     host: "localhost",
-    database: "MyBooks",
-    password: "jp*0014",
+    database: "DB-Name",
+    password: "DB-Password",
     port: 5432,
   });
   
