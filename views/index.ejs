@@ -1,0 +1,87 @@
+<%- include("partials/header") %>
+
+  <!-- Navigation bar with Bootstrap classes -->
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">Book Notes</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/new">Add New Book</a>
+          </li>
+        </ul>
+        
+        <!-- Search form -->
+
+        <form class="d-flex" action="/" method="get">
+          <input class="form-control me-2" type="search" name="search" placeholder="Search by title" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <hr />
+  <div class = "container col-xxl-7 px-4">
+    <div class = "row flex-lg-row align-items-center g-1 pb-2">
+      <h1> Jothiprasath P A </h1>
+      <h2> Books I’ve read </h2>
+      <p> Some notes for each book read. Use the ISBN number to find it from your local library or anywhere else. This page will constantly update as I read more, so bookmark it if you want to check back in a few months.</p>
+      <p> Sorted with my top recommendations up top. <br />
+        Sort by :
+        <a href="/?&orderBy=title">title</a> |
+        <a href="/?&orderBy=date_read">newest</a> |
+        <a href="/?&orderBy=rating">best</a>
+      </p>
+      
+      <p> To add a new book note, click <a class="edit" href="/new">Add</a></p>
+      <hr>
+    </div>
+    
+    <% for (var i = 0; i < books.length; i++) {  %>
+      <div class="align-items-center g-1 pt-2 pb-5 mb-5 mt-1">
+        <img class = "image img-thumbnail" src= "<%=bookcovers[i]%>" alt= "book cover for book">  <!-- Book cover image -->
+        <h3 class="book_detail display-5 fw-bold text-body-emphasis lh-1 mb-3"><%=books[i].title%></h1> <!-- Book details -->
+          <h5 class="book_detail">
+            <span>Date read: <%=books[i].date_read%> |  </span> 
+            <span>How strongly I recommend it: <%=books[i].rating%></span>
+          </h5>
+          
+          <p class = "book_detail"><%=books[i].notes%></p>
+          <a class="edit" href="/edit/<%= books[i].id %>">Edit</a> |
+          <!--onclick function can ask the confirmation to user to delete the book-->
+          <a class="delete" href="/delete/<%= books[i].id %>" onclick="return confirm('Are you sure you want to delete this book?');">Delete</a>
+        </div>
+        <% } %>
+        
+        <!-- Pagination -->
+
+        <nav aria-label="Page navigation example">
+          <ul class="pagination">
+            <li class="page-item <%= currentPage === 1 ? 'disabled' : '' %>">
+              <a class="page-link" href="/?page=<%= currentPage - 1 %>&orderBy=<%= orderBy %>">Previous</a>
+            </li>
+            
+            <% for (var i = 1; i <= totalPages; i++) { %>
+              <li class="page-item <%= currentPage === i ? 'active' : '' %>">
+                <a class="page-link" href="/?page=<%= i %>&orderBy=<%= orderBy %>"><%= i %></a>
+              </li>
+            <% } %>
+            
+            <li class="page-item <%= currentPage === totalPages ? 'disabled' : '' %>">
+              <a class="page-link" href="/?page=<%= currentPage + 1 %>&orderBy=<%= orderBy %>">Next</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <hr class="pb-2"/>
+
+<%- include("partials/footer") %>
