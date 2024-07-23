@@ -88,6 +88,9 @@ node server.js
 Open your browser and navigate to ```http://localhost:3000``` to view the application.
 
 ## Screenshots
+### Pre-Hand Drawn Image 
+![Book-note pre-hand-drawn image.](readme-image/pre-Hand-drawn-image.jpg "This is the pre-drawn image for website.")
+
 ### Home Page
 ![Book-notes Home web page.](readme-image/home.png "This is a Book-Note's Home web-page image.")
 
